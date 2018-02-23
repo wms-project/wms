@@ -5,6 +5,7 @@ class Pengguna extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model(['pengguna_model']);
+		$this->load->getPengguna;
 	}
 	public function index()
 	{
@@ -16,9 +17,9 @@ class Pengguna extends CI_Controller {
 		$pengguna = $this->pengguna_model->getPengguna();
 		echo json_encode($pengguna);
 	}
-	public function saveCustomer()
+	public function savePengguna()
 	{
-		$input = $this->model_customers->saveCustomer();
+		$input = $this->pengguna_model->savePengguna();
 		if ($input) {
 			echo json_encode(['success' => true]);
 		}else {

@@ -52,10 +52,11 @@ document.getElementById("jam").innerHTML = tanggal1.getHours()+":"+tanggal1.getM
        ?>
     </div>
     <div data-options="region:'east',split:true,collapsed:true,title:'Pengguna',iconCls:'icon-users'" style="width:130px;padding:10px;">
-    <?php
+    <?php /*
 	include 'pengguna.php';
 	include 'menu_pengguna.php';
-	?>
+  */
+  ?>
     </div>
 	<div class="bawah" data-options="region:'south',border:false" style="height:40px;padding:10px;color:#FFF; background:#9bbe25;">
     <div align="center">

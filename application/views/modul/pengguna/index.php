@@ -1,11 +1,11 @@
 <br>
 <center>
 <table id="dg" class="easyui-datagrid" style="width:80%;height:410px"
-    url="pengguna/getpengguna"
+    url="'<?php echo base_url('/pengguna/getpengguna'); ?>'"
     title="Anggota"
     toolbar="#toolbar"
-	fitColumns="true"
-	singleSelect="true"
+	  fitColumns="true"
+	  singleSelect="true"
     pagination="true" >
     <thead>
         <tr>
@@ -15,10 +15,11 @@
     </thead>
 </table>
 	<div id="toolbar">
-<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">Data Baru</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">Data Baru</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Ubah Data</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Hapus Data</a>
-	</div>
+
+  </div>
 
 	<div id="dlg" class="easyui-dialog" style="width:500px;height:280px;padding:10px 20px"
 			closed="true" buttons="#dlg-buttons">

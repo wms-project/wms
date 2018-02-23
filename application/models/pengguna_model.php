@@ -27,21 +27,12 @@ class pengguna_model extends CI_Model
         return $result;
 	}
 
-  public function saveCustomer()
+  public function savePengguna()
     {
         $data = [
-            'customerName' => $this->input->post('customerName'),
-            'contactFirstName' => $this->input->post('contactFirstName'),
-            'contactLastName' => $this->input->post('contactLastName'),
-            'phone' => $this->input->post('phone'),
-            'addressLine1' => $this->input->post('addressLine1'),
-            'addressLine2' => $this->input->post('addressLine2'),
-            'city' => $this->input->post('city'),
-            'state' => $this->input->post('state'),
-            'postalCode' => $this->input->post('postalCode'),
-            'country' => $this->input->post('country'),
+            'nama' => $this->input->post('nama'),
         ];
-        $this->db->insert('customers',$data);
+        $this->db->insert('pengguna',$data);
         return $this->db->insert_id();
     }
     public function updateCustomer($id)
