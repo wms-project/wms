@@ -5,7 +5,6 @@ class Pengguna extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model(['pengguna_model']);
-		$this->load->getPengguna;
 	}
 	public function index()
 	{
@@ -26,11 +25,11 @@ class Pengguna extends CI_Controller {
 			echo json_encode(['Msg'=>'Some Error occured!.']);
 		}
 	}
-	public function updateCustomer($id)
+	public function updatePengguna($id)
 	{
-		$input = $this->model_customers->updateCustomer($id);
+		$input = $this->pengguna_model->updatePengguna($id);
 		if ($input) {
-			echo json_encode(['success' => true]);
+			echo json_encode(['success1' => true]);
 		}else {
 			echo json_encode(['Msg'=>'Some Error occured!.']);
 		}

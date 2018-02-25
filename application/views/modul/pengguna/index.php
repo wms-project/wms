@@ -1,7 +1,7 @@
 <br>
 <center>
 <table id="dg" class="easyui-datagrid" style="width:80%;height:410px"
-    url="'<?php echo base_url('/pengguna/getpengguna'); ?>'"
+    url="<?=base_url()?>index.php/pengguna/getPengguna/"
     title="Anggota"
     toolbar="#toolbar"
 	  fitColumns="true"
@@ -9,7 +9,7 @@
     pagination="true" >
     <thead>
         <tr>
-            <th field="kd_anggota" style="width:20%; background-color:#E0EDFF">Kode Jenis Anggota</th>
+            <th field="kd_pengguna" style="width:20%; background-color:#E0EDFF">Kode Jenis Anggota</th>
             <th field="nama" width="80%">Nama Jenis Anggota</th>
         </tr>
     </thead>
@@ -28,12 +28,12 @@
 			<tr>
 					<td>Kode Jenis Anggota</td>
 					<td>:</td>
-					<td><input name="kdjnsanggota" id="kdjnsanggota" class="easyui-numberbox" class="easyui-numberbox"  data-options="required:true"  style="width:200px;"></td>
+					<td><input name="kd_pengguna" id="kd_pengguna" class="easyui-numberbox" class="easyui-numberbox"  data-options="required:true"  style="width:200px;"></td>
 				</tr>
 				<tr>
 					<td>Nama Jenis Anggota</td>
 					<td>:</td>
-					<td><input name="nmjnsanggota" id="nmjnsanggota" class="easyui-textbox" required="true" style="width:200px;"></td>
+					<td><input name="nama" id="nama" class="easyui-textbox" required="true" style="width:200px;"></td>
 				</tr>
 				</table>
 			<input type="hidden" name="tombol" id="update" value="">
@@ -50,21 +50,21 @@
 //			document.getElementById("update").value="Insert Data";
 			var str = "Insert Data";
 			document.getElementById('update').value = str;
-			$('#kdjnsanggota').numberbox('readonly',false)
+			$('#kd_pengguna').numberbox('readonly',false)
 			$('#dlg').dialog('open').dialog('setTitle','Jenis Anggota');
 			$('#fm').form('clear');
-			url = 'page/anggota/jnsanggota/jnsanggotains.jsp';
+			url = '<?=base_url()?>index.php/pengguna/savePengguna';
 		}
 		function editUser(){
 //			document.getElementById("update").value="Update Data";
 			var str = "Update Data";
 			document.getElementById('update').value = str;
-			$('#kdjnsanggota').numberbox('readonly',true)
+			$('#kd_pengguna').numberbox('readonly',true)
 			var row = $('#dg').datagrid('getSelected');
 			if (row){
 				$('#dlg').dialog('open').dialog('setTitle','Informasi Kota');
 				$('#fm').form('load',row);
-				url = 'page/anggota/jnsanggota/jnsanggotains.jsp';
+				url = '<?=base_url()?>index.php/pengguna/updateCustomer/'+row.kd_pengguna;
 			}
 			else if (row==null){
 				$.messager.alert('Error','Pilih data yang ingin diubah!','error');
