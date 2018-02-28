@@ -25,11 +25,11 @@
 			closed="true" buttons="#dlg-buttons">
 		<form id="fm" method="post" >
 			<table>
-			<tr>
+			<!-- <tr>
 					<td>Kode Jenis Anggota</td>
 					<td>:</td>
 					<td><input name="kd_pengguna" id="kd_pengguna" class="easyui-numberbox" class="easyui-numberbox"  data-options="required:true"  style="width:200px;"></td>
-				</tr>
+				</tr> -->
 				<tr>
 					<td>Nama Jenis Anggota</td>
 					<td>:</td>
@@ -118,6 +118,9 @@
 						},'json');
 					}
 				});
+			}
+			else if (row==null){
+				$.messager.alert('Error','Pilih data yang ingin dihapus!','error');
 			}
 		}
 		
