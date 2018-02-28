@@ -50,7 +50,7 @@
 //			document.getElementById("update").value="Insert Data";
 			var str = "Insert Data";
 			document.getElementById('update').value = str;
-			$('#kd_pengguna').numberbox('readonly',false)
+			//$('#kd_pengguna').numberbox('readonly',false)
 			$('#dlg').dialog('open').dialog('setTitle','Jenis Anggota');
 			$('#fm').form('clear');
 			url = '<?=base_url()?>index.php/pengguna/savePengguna';
@@ -62,9 +62,9 @@
 			$('#kd_pengguna').numberbox('readonly',true)
 			var row = $('#dg').datagrid('getSelected');
 			if (row){
-				$('#dlg').dialog('open').dialog('setTitle','Informasi Kota');
+				$('#dlg').dialog('open').dialog('setTitle','Jenis Anggota');
 				$('#fm').form('load',row);
-				url = '<?=base_url()?>index.php/pengguna/updateCustomer/'+row.kd_pengguna;
+				url = '<?=base_url()?>index.php/pengguna/updatePengguna/'+row.kd_pengguna;
 			}
 			else if (row==null){
 				$.messager.alert('Error','Pilih data yang ingin diubah!','error');
@@ -108,7 +108,7 @@
 				var str = "Delete Data";
 				$.messager.confirm('Konfirmasi','Apakah anda yakin menghapus data ini?',function(r){
 					if (r){
-						$.post('page/anggota/jnsanggota/jnsanggotains.jsp',{kdjnsanggota:row.kdjnsanggota,tombol:str},function(result){
+						$.post('<?=base_url()?>index.php/pengguna/destroyCustomer',{kd_pengguna:row.kd_pengguna},function(result){
 							if (result.success){
 								$('#dg').datagrid('reload');	// reload the user data
 								$.messager.alert('Info','Data berhasil dihapus','info');
@@ -120,6 +120,7 @@
 				});
 			}
 		}
+		
 	</script>
 	<style type="text/css">
 		#fm{

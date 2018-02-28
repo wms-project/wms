@@ -32,8 +32,8 @@ class pengguna_model extends CI_Model
     }
     public function destroyCustomer($id)
     {
-        $this->db->where('customerNumber',$id);
-        return $this->db->delete('customers');
+        $this->db->where('kd_pengguna',$id);
+        return $this->db->delete('pengguna');
         // return $this->db->delete($this->table,['id' => $id]);
     }
 }

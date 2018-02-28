@@ -36,8 +36,8 @@ class Pengguna extends CI_Controller {
 	}
 	public function destroyCustomer()
 	{
-		$id = intval($_REQUEST['id']);
-		$input = $this->model_customers->destroyCustomer($id);
+		$id = intval($_REQUEST['kd_pengguna']);
+		$input = $this->pengguna_model->destroyCustomer($id);
 		if ($input) {
 			echo json_encode(array('success'=>true));
 		}else {
