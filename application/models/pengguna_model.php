@@ -49,7 +49,11 @@ class pengguna_model extends CI_Model
     public function destroyCustomer($id)
     {
         $this->db->where('kd_pengguna',$id);
+<<<<<<< HEAD
         return 	$this->db->delete('pengguna');
+=======
+        return $this->db->delete('pengguna');
+>>>>>>> c6c890c42a9c6113e282b3dc2b54a3c3a5f6b00a
         // return $this->db->delete($this->table,['id' => $id]);
     }
 		// function hapus($param_id, $id, $table){

@@ -32,6 +32,7 @@
 			closed="true" buttons="#dlg-buttons">
 		<form id="fm" method="post" >
 			<table>
+<<<<<<< HEAD
         <tr>
 					<td>Kode Pengguna</td>
 					<td>:</td>
@@ -39,6 +40,15 @@
 				</tr>
         <tr>
 					<td>Nama Anggota</td>
+=======
+			<!-- <tr>
+					<td>Kode Jenis Anggota</td>
+					<td>:</td>
+					<td><input name="kd_pengguna" id="kd_pengguna" class="easyui-numberbox" class="easyui-numberbox"  data-options="required:true"  style="width:200px;"></td>
+				</tr> -->
+				<tr>
+					<td>Nama Jenis Anggota</td>
+>>>>>>> c6c890c42a9c6113e282b3dc2b54a3c3a5f6b00a
 					<td>:</td>
 					<td><input name="nama" id="nama" class="easyui-textbox" required="true" style="width:200px;"></td>
 				</tr>
@@ -57,7 +67,11 @@
 //			document.getElementById("update").value="Insert Data";
 			var str = "Insert Data";
 			document.getElementById('update').value = str;
+<<<<<<< HEAD
 			$('#kd_pengguna').textbox('readonly',false)
+=======
+			//$('#kd_pengguna').numberbox('readonly',false)
+>>>>>>> c6c890c42a9c6113e282b3dc2b54a3c3a5f6b00a
 			$('#dlg').dialog('open').dialog('setTitle','Jenis Anggota');
 			$('#fm').form('clear');
 			url = '<?=base_url()?>index.php/pengguna/savePengguna';
@@ -69,7 +83,7 @@
 			$('#kd_pengguna').numberbox('readonly',true)
 			var row = $('#dg').datagrid('getSelected');
 			if (row){
-				$('#dlg').dialog('open').dialog('setTitle','Informasi Kota');
+				$('#dlg').dialog('open').dialog('setTitle','Jenis Anggota');
 				$('#fm').form('load',row);
 				url = '<?=base_url()?>index.php/pengguna/updatePengguna/'+row.kd_pengguna;
 			}
@@ -110,6 +124,7 @@
 			});
 		}
 		function destroyUser(){
+<<<<<<< HEAD
   			var row = $('#dg').datagrid('getSelected');
   			if (row){
   				var str = "Delete Data";
@@ -138,6 +153,29 @@
       // })
       jeasyui.com/forum/index.php?topic=3420.0
     }
+=======
+			var row = $('#dg').datagrid('getSelected');
+			if (row){
+				var str = "Delete Data";
+				$.messager.confirm('Konfirmasi','Apakah anda yakin menghapus data ini?',function(r){
+					if (r){
+						$.post('<?=base_url()?>index.php/pengguna/destroyCustomer',{kd_pengguna:row.kd_pengguna},function(result){
+							if (result.success){
+								$('#dg').datagrid('reload');	// reload the user data
+								$.messager.alert('Info','Data berhasil dihapus','info');
+							} else {
+								$.messager.alert('Error',result.errorMsg,'error');
+							}
+						},'json');
+					}
+				});
+			}
+			else if (row==null){
+				$.messager.alert('Error','Pilih data yang ingin dihapus!','error');
+			}
+		}
+		
+>>>>>>> c6c890c42a9c6113e282b3dc2b54a3c3a5f6b00a
 	</script>
 	<style type="text/css">
 		#fm{
