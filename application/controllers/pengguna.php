@@ -22,7 +22,7 @@ class Pengguna extends CI_Controller {
 		if ($input) {
 			echo json_encode(['success' => true]);
 		}else {
-			echo json_encode(['Msg'=>'Some Error occured!.']);
+			echo json_encode(['errorMsg'=>'Some Error occured!.']);
 		}
 	}
 	public function updatePengguna($id)
@@ -31,17 +31,20 @@ class Pengguna extends CI_Controller {
 		if ($input) {
 			echo json_encode(['success1' => true]);
 		}else {
-			echo json_encode(['Msg'=>'Some Error occured!.']);
+			echo json_encode(['errorMsg'=>'Some Error occured!.']);
 		}
 	}
 	public function destroyCustomer()
 	{
-		$id = intval($_REQUEST['id']);
-		$input = $this->model_customers->destroyCustomer($id);
+		$id = intval($_REQUEST['kd_pengguna']);
+		$input = $this->pengguna_model->destroyCustomer($id);
 		if ($input) {
 			echo json_encode(array('success'=>true));
 		}else {
 			echo json_encode(array('errorMsg'=>'Some errors occured.'));
 		}
 	}
+	// public function deleteCustomer(){
+  //
+	// }
 }

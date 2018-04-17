@@ -60,7 +60,7 @@ document.getElementById("jam").innerHTML = tanggal1.getHours()+":"+tanggal1.getM
     </div>
 	<div class="bawah" data-options="region:'south',border:false" style="height:40px;padding:10px;color:#FFF; background:#9bbe25;">
     <div align="center">
-    Copyright &copy; Ari Bambang Kurniawan.
+    Copyright &copy; PT. Digital Kreator Indonesia.
     </div>
     </div>
 	<div id="content" data-options="region:'center',title:'Content',iconCls:'icon-content'">
